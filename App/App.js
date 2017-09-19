@@ -22,21 +22,13 @@ import {
 
 import FontAwesome, { Icons } from 'react-native-fontawesome'
 
+import JournalHeader from './Componnents/JournalHeader/JournalHeader';
 
 export default class App extends Component {
     render() {
         return (
             <Container>
-                <Header>
-                    <Left style={styles.leftButton}>
-                        <Button transparent >
-                            <Icon ios='ios-menu' android="md-menu"/>
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title style={styles.titleApp}> Journal de Chantier de test </Title>
-                    </Body>
-                </Header>
+                <JournalHeader title="Test Journal"/>
                 <View style={styles.container}>
                     <Text style={styles.welcome}>
                         Bienvenue sur le TEST React-native
@@ -71,11 +63,4 @@ const styles = StyleSheet.create({
         color: '#333333',
         marginBottom: 5,
     },
-    titleApp: {
-        fontSize: 20,
-        fontWeight: '300',
-    },
-    leftButton: {
-        flex: 0
-    }
 });
