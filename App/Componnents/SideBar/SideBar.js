@@ -21,8 +21,8 @@ export default class SideBar extends Component {
                     <View style={styles.sideNavWrap}>
                         <Text style={styles.appName}>Journal de Chantier Mobile</Text>
                         <View style={styles.hariboteWrap}>
-                            <Text style={styles.noteHaribote}>Éléments de test</Text>
-                            <Text style={styles.hariboteDesc}>Camera</Text>
+                            <Text style={styles.noteHaribote}>Prendre Une photo</Text>
+                            <Text style={styles.hariboteDesc}>Test pour essayer de prendre des photos</Text>
                         </View>
                     </View>
 
