@@ -1,43 +1,29 @@
 import React from "react";
-import { StatusBar } from "react-native";
+import { StatusBar, View } from "react-native";
 import { Container, Header, Title, Left, Icon, Right, Button, Body, Content,Text, Card, CardItem } from "native-base";
+import JournalHeader from './../../Componnents/JournalHeader/JournalHeader';
+import styles from './Styles';
 export default class HomeScreen extends React.Component {
-  render() {
-    return (
-      <Container>
-        <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>HomeScreen</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content padder>
-          <Card>
-            <CardItem>
-              <Body>
-                <Text>Chat App to talk some awesome people!</Text>
-              </Body>
-            </CardItem>
-          </Card>
-          <Button full rounded dark
-            style={{ marginTop: 10 }}
-            onPress={() => this.props.navigation.navigate("Chat")}>
-            <Text>Chat With People</Text>
-          </Button>
-          <Button full rounded primary
-            style={{ marginTop: 10 }}
-            onPress={() => this.props.navigation.navigate("Profile")}>
-            <Text>Goto Profiles</Text>
-          </Button>
-        </Content>
-      </Container>
-    );
-  }
+    openDrawer( ) {
+        this.props.navigation.navigate("DrawerOpen")
+    }
+    render() {
+        return (
+            <Container>
+                <JournalHeader title="Journal de Chantier" press={this.openDrawer.bind( this )}/>
+                <View style={styles.container}>
+                    <Text style={styles.welcome}>
+                        Bienvenue sur le TEST React-native
+                    </Text>
+                    <Text style={styles.instructions}>
+                        To get started, edit index.ios.js
+                    </Text>
+                    <Text style={styles.instructions}>
+                        Press Cmd+R to reload,{'\n'}
+                        Cmd+D or shake for dev menu
+                    </Text>
+                </View>
+            </Container>
+        );
+    }
 }

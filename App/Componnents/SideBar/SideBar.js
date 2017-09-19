@@ -6,14 +6,35 @@ import {
 } from 'react-native';
 import {
     Container,
-    Icon
+    Icon,
+    List,
+    ListItem
 } from 'native-base'
 
-import FontAwesome, { Icons } from 'react-native-fontawesome'
 import styles from './Styles'
+import SideBarItem from './SideBarItem'
+
+const routes = [
+    {
+        'route' : "Home",
+        'name'  : "Accueil",
+        'desc'  : "Retour au début de l'application",
+    },
+    {
+        'route' : "Camera",
+        'name'  : "CameraView",
+        'desc'  : "Aller prendre une photo",
+    },
+];
 
 export default class SideBar extends Component {
     render( ) {
+        var rows = [];
+        routes.forEach(function(elm) {
+            rows.push(
+                <SideBarItem route={elm.route} itemName={elm.name} itemDesc={elm.desc} press={() => this.props.navigation.navigate(elm.route)} />
+            );
+        });
         return (
             <Container style={{
                 backgroundColor: '#2E3235',
@@ -21,8 +42,7 @@ export default class SideBar extends Component {
                     <View style={styles.sideNavWrap}>
                         <Text style={styles.appName}>Journal de Chantier Mobile</Text>
                         <View style={styles.hariboteWrap}>
-                            <Text style={styles.noteHaribote}>Prendre Une photo</Text>
-                            <Text style={styles.hariboteDesc}>Test pour essayer de prendre des photos</Text>
+                            {rows}
                         </View>
                     </View>
 
