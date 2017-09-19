@@ -10,15 +10,15 @@ import {
     Button,
     Left,
     Body,
-    Icon
+    Icon,
 } from 'native-base'
 
 export default class JournalHeader extends Component {
     render( ) {
         return (
             <Header>
-                <Left style={styles.leftButton}>
-                    <Button transparent >
+                <Left style={styles.leftButton} >
+                    <Button transparent onPress={this.openDrawer}>
                         <Icon ios='ios-menu' android="md-menu"/>
                     </Button>
                 </Left>

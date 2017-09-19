@@ -17,31 +17,53 @@ import {
     Icon,
     Drawer,
     Card,
-    CardItem,
+    CardItem
 } from 'native-base'
 
 import FontAwesome, { Icons } from 'react-native-fontawesome'
 
 import JournalHeader from './Componnents/JournalHeader/JournalHeader';
+import SideBar from './Componnents/SideBar/SideBar';
 
 export default class App extends Component {
+
+    openDrawer = ( ) => {
+        this._drawer._root.open()
+    }
+
     render() {
         return (
-            <Container>
-                <JournalHeader title="Test Journal"/>
-                <View style={styles.container}>
-                    <Text style={styles.welcome}>
-                        Bienvenue sur le TEST React-native
-                    </Text>
-                    <Text style={styles.instructions}>
-                        To get started, edit index.ios.js
-                    </Text>
-                    <Text style={styles.instructions}>
-                        Press Cmd+R to reload,{'\n'}
-                        Cmd+D or shake for dev menu
-                    </Text>
-                </View>
-            </Container>
+            <Drawer
+                ref={(ref) => {
+                    this._drawer = ref
+                }}
+                content={<SideBar/>}
+                panOpenMask={.05}>
+                <Container>
+                    <Header>
+                        <Left style={styles.leftButton} >
+                            <Button transparent onPress={this.openDrawer}>
+                                <Icon ios='ios-menu' android="md-menu"/>
+                            </Button>
+                        </Left>
+                        <Body>
+                            <Title style={styles.titleApp}> {this.props.title} </Title>
+                        </Body>
+                    </Header>
+                    <View style={styles.container}>
+                        <Text style={styles.welcome}>
+                            Bienvenue sur le TEST React-native
+                        </Text>
+                        <Text style={styles.instructions}>
+                            To get started, edit index.ios.js
+                        </Text>
+                        <Text style={styles.instructions}>
+                            Press Cmd+R to reload,{'\n'}
+                            Cmd+D or shake for dev menu
+                        </Text>
+                    </View>
+                </Container>
+            </Drawer>
         );
     }
 };
