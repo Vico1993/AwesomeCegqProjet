@@ -18,7 +18,7 @@ export default class JournalHeader extends Component {
         return (
             <Header>
                 <Left style={styles.leftButton} >
-                    <Button transparent onPress={this.openDrawer}>
+                    <Button transparent onPress={this.props.press}>
                         <Icon ios='ios-menu' android="md-menu"/>
                     </Button>
                 </Left>

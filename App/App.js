@@ -40,16 +40,7 @@ export default class App extends Component {
                 content={<SideBar/>}
                 panOpenMask={.05}>
                 <Container>
-                    <Header>
-                        <Left style={styles.leftButton} >
-                            <Button transparent onPress={this.openDrawer}>
-                                <Icon ios='ios-menu' android="md-menu"/>
-                            </Button>
-                        </Left>
-                        <Body>
-                            <Title style={styles.titleApp}> {this.props.title} </Title>
-                        </Body>
-                    </Header>
+                    <JournalHeader title="Home Journal de Chantier" press={this.openDrawer}/>
                     <View style={styles.container}>
                         <Text style={styles.welcome}>
                             Bienvenue sur le TEST React-native
