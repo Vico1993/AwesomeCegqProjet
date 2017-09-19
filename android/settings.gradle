@@ -1,0 +1,3 @@
+rootProject.name = 'AwesomeCegqProjet'
+
+include ':app'
