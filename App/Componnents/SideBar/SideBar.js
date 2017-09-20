@@ -33,6 +33,12 @@ const routes = [
         'name'  : "NotificationView",
         'desc'  : "Aller tester les notifications",
     },
+    {
+        'id'    : 3,
+        'route' : "PhotoLib",
+        'name'  : "PhotoLibView",
+        'desc'  : "Aller tester la librairie de photo",
+    },
 ];
 
 export default class SideBar extends Component {
