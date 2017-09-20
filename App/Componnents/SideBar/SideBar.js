@@ -32,9 +32,9 @@ export default class SideBar extends Component {
         var rows = [];
         routes.forEach(function(elm) {
             rows.push(
-                <SideBarItem route={elm.route} itemName={elm.name} itemDesc={elm.desc} press={() => this.props.navigation.navigate(elm.route)} />
+                <SideBarItem route={elm.route} itemName={elm.name} itemDesc={elm.desc} press={() => this.props.navigation.navigate( elm.route )} />
             );
-        });
+        }.bind( this ));
         return (
             <Container style={{
                 backgroundColor: '#2E3235',
