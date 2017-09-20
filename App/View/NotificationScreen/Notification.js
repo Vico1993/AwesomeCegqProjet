@@ -1,20 +1,16 @@
 import React from "react";
 import { AppRegistry, Alert } from "react-native";
-import { Container, Header, Left, Body, Title, Card, CardItem, Content, Right, Icon, Button, Text } from "native-base";
+import { Container, Header, Left, Body, Title, Card, CardItem, Content, Center, Right, Icon, Button, Text } from "native-base";
 import { StackNavigator } from "react-navigation";
 
-export default class Camera extends React.Component {
+export default class Notification extends React.Component {
     render() {
         return (
             <Container>
                 <Content padder>
                     <Card>
                         <CardItem>
-                            <Icon active name="paper-plane" />
-                            <Text>CAMERA ?</Text>
-                            <Right>
-                                <Icon name="close" />
-                            </Right>
+                            <Text>Notification ?</Text>
                         </CardItem>
                     </Card>
                 <Button full rounded primary
@@ -26,7 +22,7 @@ export default class Camera extends React.Component {
         );
     }
 }
-Camera.navigationOptions = ({ navigation }) => ({
+Notification.navigationOptions = ({ navigation }) => ({
   header: (
     <Header>
       <Left>
@@ -35,7 +31,7 @@ Camera.navigationOptions = ({ navigation }) => ({
         </Button>
       </Left>
       <Body>
-        <Title>Camera</Title>
+        <Title>Notification</Title>
       </Body>
       <Right />
     </Header>

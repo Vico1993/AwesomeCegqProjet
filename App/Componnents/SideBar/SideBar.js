@@ -16,14 +16,22 @@ import SideBarItem from './SideBarItem'
 
 const routes = [
     {
+        'id'    : 0,
         'route' : "Home",
         'name'  : "Accueil",
         'desc'  : "Retour au début de l'application",
     },
     {
+        'id'    : 1,
         'route' : "Camera",
         'name'  : "CameraView",
         'desc'  : "Aller prendre une photo",
+    },
+    {
+        'id'    : 2,
+        'route' : "Notification",
+        'name'  : "NotificationView",
+        'desc'  : "Aller tester les notifications",
     },
 ];
 
